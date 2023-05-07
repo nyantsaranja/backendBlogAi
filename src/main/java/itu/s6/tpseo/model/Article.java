@@ -32,7 +32,7 @@ public class Article extends HasId {
     }
 
     public String buildSlug() {
-        String slug= this.getTitle().toLowerCase().replace(" ", "-");
+        String slug= this.getTitle().toLowerCase().trim().replace(" ", "-");
         // replace character with accent with those without
         slug = slug.replace("é", "e");
         slug = slug.replace("è", "e");
@@ -51,7 +51,6 @@ public class Article extends HasId {
         slug = slug.replace("æ", "ae");
         slug=slug.replace("[^a-z0-9-]", "");
 //        replace space with -
-        slug=slug.replace(" ", "-");
         slug+="-"+this.getId();
         return slug;
     }
