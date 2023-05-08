@@ -195,7 +195,7 @@ public abstract class CrudService<E, R extends JpaRepository<E, Long>> implement
 
     @Override
     public int getPageSize() {
-        return 2;
+        return 5;
     }
 }
 
