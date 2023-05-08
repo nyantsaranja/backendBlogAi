@@ -34,7 +34,6 @@ public class ArticleController extends CrudController<Article, ArticleService, A
     }
 
     @GetMapping("")
-    @Cacheable(value = "articles", key = "'articles'")
     public ResponseEntity<?> findAll(ArticleFilter filter, @RequestParam(required = false) Integer page, @RequestParam(required = false) Object order) throws Exception {
         return returnSuccess(service.search(filter, page, order), HttpStatus.OK);
     }
