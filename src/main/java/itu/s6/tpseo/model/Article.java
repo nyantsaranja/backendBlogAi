@@ -1,5 +1,6 @@
 package itu.s6.tpseo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import itu.s6.tpseo.framework.springutils.model.HasId;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,6 +19,7 @@ public class Article extends HasId {
     private String subtitle;
     private String content;
     private String summary;
+//    @JsonIgnore
     private String image;
     private Date publicationDate;
     @ManyToOne
